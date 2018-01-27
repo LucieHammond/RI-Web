@@ -1,4 +1,5 @@
-# Fondements de la Recherche d’Information-WEB (Cours de 3A)
+# Fondements de la Recherche d’Information-WEB
+*Cours de 3A : Projet*
 
 ## 1. Architecture du projet, corpus de données
 Le dossier présent s'articule autour de 2 répertoires _src_ et _res_, le premier contenant le code source du projet, et le deuxième les données (collections, indexes, requêtes, jugements de pertinence...) sur lesquelles j'ai travaillé.
