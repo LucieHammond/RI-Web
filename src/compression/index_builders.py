@@ -8,6 +8,10 @@ from src.compression.vb_encoding import byte_encode, byte_decode
 
 
 class DocVBE(DocBSBI):
+    """
+        This class rewrites the methods of BocBSBI that write in index files (or read them for merging)
+        in order to create compressed indexes
+    """
 
     def __init__(self, collection):
         DocBSBI.__init__(self, collection)
@@ -61,6 +65,10 @@ class DocVBE(DocBSBI):
 
 
 class FreqVBE(FreqBSBI):
+    """
+        This class rewrites the methods of FreqBSBI that write in index files (or read them for merging)
+        in order to create compressed indexes
+    """
 
     def __init__(self, collection):
         FreqBSBI.__init__(self, collection)

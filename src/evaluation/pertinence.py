@@ -22,6 +22,7 @@ def f_measure(precision, recall, beta):
 
 
 class Evaluation:
+    """ This class is dedicated to mesure the pertinence of a set of results given a set of relevance judgments """
 
     def __init__(self, results, relevance):
         self.results = results
@@ -167,6 +168,10 @@ class RankedResults(Evaluation):
 
 
 def global_pertinence(eval):
+    """
+    Compute and show an evaluation of the overall pertinence of a research system (pertinence over all results)
+    :param eval: evaluation of type Evaluation
+    """
 
     # Recall-Precision
     recalls, precisions = zip(*eval.recall_precision)
@@ -212,6 +217,12 @@ def global_pertinence(eval):
 
 
 def pertinence_with_rankings(ranked_eval, steps):
+    """
+    Compute and show an evaluation of the pertinence of a research system with ranked results
+    :param ranked_eval: evaluation of type RankedResults
+    :param steps: the precision of the measures in recall axis for the Recall-Precision curves
+    """
+
     # Recall-Precision curve
     rp_curves, avg_rp_curve = ranked_eval.recall_precision_curves(steps)
     x = [(s + 1) / steps for s in range(steps)]
@@ -247,6 +258,8 @@ def pertinence_with_rankings(ranked_eval, steps):
 
 
 def comparison_search_params(steps):
+    """ Run evaluation with rankings for different weightings in vectorial model """
+
     x = [(s + 1) / steps for s in range(steps)]
     all_tf = [w.tf_log, w.tf, w.tf_binary, w.tf_id, w.tf_sqrt, w.tf_log1p, w.tf_norm]
     all_idf = [w.idf, w.idf_unary, w.idf_log, w.idf_smooth, w.idf_proba]

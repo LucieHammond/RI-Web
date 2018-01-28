@@ -20,6 +20,11 @@ def skip_next_num(data, pointer):
 
 
 class DocIDIndexVBE(DocIDIndex):
+    """
+        This class rewrites the methods of DocIDIndex that access and read in index file in order to:
+        - redirect the reader to the corresponding folder with compressed indexes
+        - read correctly the compressed reversed index by decoding the bytes
+    """
 
     def __init__(self, collection):
         DocIDIndex.__init__(self, collection)
@@ -49,6 +54,11 @@ class DocIDIndexVBE(DocIDIndex):
 
 
 class FreqIndexVBE(FreqIndex):
+    """
+        This class rewrites the methods of FreqIndex that access and read in index file in order to:
+        - redirect the reader to the corresponding folder with compressed indexes
+        - read correctly the compressed index and reversed index by decoding the bytes
+    """
 
     def __init__(self, collection):
         FreqIndex.__init__(self, collection)

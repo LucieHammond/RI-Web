@@ -12,6 +12,7 @@ from src.searching.index_reader import DocIDIndex, FreqIndex
 
 
 def timeit(func, *args, **kwargs):
+    """ Execute function and mesure the time it takes to execute """
     start = time.time()
     func(*args, **kwargs)
     end = time.time()
@@ -30,7 +31,7 @@ def display_memory_sizes(labels, sizes):
 
 
 def perf_processing():
-    """ Temps traitement linguistique des collections """
+    """ Temps de traitement linguistique des collections """
     print("----- Test language processing -----")
     perf_half_cacm = []
     perf_cacm = []

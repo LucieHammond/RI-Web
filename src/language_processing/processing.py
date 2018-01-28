@@ -11,6 +11,11 @@ STOP_WORDS = load_stop_words()
 
 
 class Collection:
+	"""
+		This class represents a processed collection and implements different language processings methods
+		to extract important information from texts.
+		It also includes global statistics about the collection and methods to mesure and compute those stats
+	"""
 
 	def __init__(self, loader, tokn=True, filt=True, norm=False):
 		self.loader = loader
@@ -57,6 +62,7 @@ class Collection:
 				self.freq_dist[word] += 1
 
 	def process_collection(self, percentage=1.0):
+		""" Process all collection (or a percentage of it) and compute stats (distributions, size of vocabulary...) """
 
 		def process_contents(content):
 			tokens = self.process(content)
@@ -66,6 +72,7 @@ class Collection:
 		[thread.join() for thread in threads]
 
 	def process_block(self, block_name, callback):
+		""" Load only one block and process documents one by one in threads as soon as they are loaded """
 		list_pairs = list()
 		lock = Lock()
 

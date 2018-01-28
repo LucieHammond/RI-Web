@@ -11,7 +11,7 @@ class WrongFormatError(Exception): pass
 
 # Vectorial queries will be represented as a text (string)
 def read_queries(query_file='query.text'):
-    """ Read queries that are written on query_file """
+    """ Read vectorial queries that are written on query_file """
     queries = list()
 
     query_path = os.path.join(QUERIES_DIR, query_file)
@@ -60,18 +60,20 @@ def start_search_engine_cli(collection_name, index=None, tf=w.tf, idf=w.idf, rsv
 
 
 def input_query():
-    # Write query in command line
+    """ Write vectorial query in command line"""
     print("\nNouvelle requête :")
     return input()
 
 
 def display_query(query_tokens):
+    """ Display in console the vectorial query after language processing """
 
     print("\nRequête après traitement :", ' '.join(query_tokens))
     print('_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n')
 
 
-def search_for_query(query_tokens, index, tf=w.tf_log, idf=w.idf, rsv=w.rsv_cos):
+def search_for_query(query_tokens, index, tf=w.tf, idf=w.idf, rsv=w.rsv_cos):
+    """ Run a vectorial search in index for given query by applying the model (tf, idf, rsv) """
 
     query_index = Counter()
     for token in query_tokens:
@@ -112,6 +114,7 @@ def search_for_query(query_tokens, index, tf=w.tf_log, idf=w.idf, rsv=w.rsv_cos)
 
 
 def display_result(list):
+    """ Display ordered list of results in console (the list is truncated at 100) """
     print("Liste des résultats :")
     if len(list) == 0:
         print("Aucun résultat")

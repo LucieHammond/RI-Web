@@ -3,7 +3,12 @@ from config import RES_DIR
 from gensim.parsing.porter import PorterStemmer
 
 
-class IndexUsage:
+class IndexReader:
+    """
+        This class propose methods to read in the searching structures (indexes, dictionaries...)
+        Given that there are different types of inversed indexes, the reading methods that deal with those index files
+        will be implemented specifically in dedicated descendant classes.
+    """
 
     def __init__(self, type, collection):
         self.collection = collection
@@ -48,10 +53,11 @@ class IndexUsage:
             return set(range(len(f.readlines())))
 
 
-class DocIDIndex(IndexUsage):
+class DocIDIndex(IndexReader):
+    """ IndexReader dedicated to reading in indexes of type DocID (used for boolean search) """
 
     def __init__(self, collection):
-        IndexUsage.__init__(self, 'DocID', collection)
+        IndexReader.__init__(self, 'DocID', collection)
 
     def find_documents(self, term, stemming=False):
         stemmer = PorterStemmer()
@@ -71,10 +77,11 @@ class DocIDIndex(IndexUsage):
                     return map(int, line.split()[1:])
 
 
-class FreqIndex(IndexUsage):
+class FreqIndex(IndexReader):
+    """ IndexReader dedicated to reading in indexes of type Frequency (used for vectorial search) """
 
     def __init__(self, collection):
-        IndexUsage.__init__(self, 'Freq', collection)
+        IndexReader.__init__(self, 'Freq', collection)
 
     def find_documents(self, terms):
         term_ids = self.get_ids_for_terms(terms)

@@ -7,6 +7,10 @@ from src.interface import CACM, CS276
 
 
 class IndexBuilder:
+    """
+        This class is dedicated to the construction of useful structures of data (indexes, dictionaries...)
+        related to a given collection passed in constructor (of type Collection)
+    """
 
     def __init__(self, collection):
         self.collection = collection
@@ -39,7 +43,7 @@ class IndexBuilder:
 
 
 class BSBI(IndexBuilder):
-    # Block Sort-Based Indexing
+    """ IndexBuilder that implements the Block Sort-Based Indexing algorithm to construct the indexes """
 
     def __init__(self, collection, index_type):
         IndexBuilder.__init__(self, collection)
@@ -92,6 +96,7 @@ class BSBI(IndexBuilder):
 
 
 class MapReduce:
+    """ Map Reduce steps that must be implemented in classes that inherit MapReduce """
 
     def map(self, key, value):
         raise NotImplementedError

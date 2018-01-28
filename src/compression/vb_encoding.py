@@ -1,3 +1,4 @@
+# This file implements the Variable Byte Encoding method
 
 def byte_encode(id, c=1):
     if id < 128:

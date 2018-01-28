@@ -8,7 +8,7 @@ class WrongFormatError(Exception): pass
 
 # Boolean queries will be represented in Normal Disjonctive Form
 def read_queries(query_file='query_bool.text'):
-    """ Read queries that are written on query_file """
+    """ Read boolean queries that are written on query_file """
     queries = list()
 
     query_path = os.path.join(QUERIES_DIR, query_file)
@@ -59,7 +59,7 @@ def start_search_engine_cli(collection_name, index=None):
 
 
 def input_query():
-    # Write query in command line
+    """ Write boolean query in command line """
     print("\n---------- Nouvelle requête ----------")
 
     query = []
@@ -81,6 +81,7 @@ def input_query():
 
 
 def display_query(query):
+    """ Display in console the boolean query shaped in human readable style """
 
     def format_variable(word):
         return "NOT %s " % word[1:] if word.startswith('-') else word + " "
@@ -100,6 +101,7 @@ def display_query(query):
 
 
 def search_for_query(query, index):
+    """ Run a boolean search in index for given query """
     relevant_docs = set()
 
     for clause in query:
@@ -125,6 +127,7 @@ def search_for_query(query, index):
 
 
 def display_result(list):
+    """ Display list of results in console (they are ordered by their id) """
     print("Liste des résultats :")
     if len(list) == 0:
         print("Aucun résultat")

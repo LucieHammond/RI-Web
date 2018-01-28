@@ -10,7 +10,7 @@ from src.indexing.index_builder import BSBI, MapReduce
 
 
 class FreqBSBI(BSBI, MapReduce):
-    """ BSBI algorithm for constructing DocID Indexes with Map Reduce approach, useful for boolean requests """
+    """ BSBI algorithm for constructing Frequency Indexes with Map Reduce approach, useful for vectorial requests """
 
     def __init__(self, collection):
         BSBI.__init__(self, collection, 'Freq')

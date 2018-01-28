@@ -5,7 +5,8 @@ from collections import defaultdict
 from config import DATA_DIR
 
 def load_stop_words():
-	""" We will take the same stop words for the 2 collections """
+	""" Read and return the list of stop-words that is given in CACM data.
+		We will take the same stop words for the 2 collections """
 	path = os.path.join(DATA_DIR, 'CACM', 'common_words')
 	stop_words = []
 
@@ -17,6 +18,7 @@ def load_stop_words():
 
 
 def read_relevance_judgments():
+	""" Read the relevance judgments given in CACM data. Return it as a dictionary {q_nb : list of docs, ...} """
 	path = os.path.join(DATA_DIR, 'CACM', 'qrels.text')
 	judgments = defaultdict(list)
 
@@ -28,6 +30,7 @@ def read_relevance_judgments():
 
 
 class CollectionLoader:
+	""" This abstract class represents a brute collection and should propose different ways to load it """
 
 	def __init__(self, name):
 		self._name = name
@@ -55,6 +58,7 @@ class CollectionLoader:
 
 
 class CACM(CollectionLoader):
+	""" Implementation of CollectionLoader for CACM collection """
 
 	def __init__(self):
 		CollectionLoader.__init__(self, 'CACM')
@@ -110,6 +114,7 @@ class CACM(CollectionLoader):
 
 
 class CS276(CollectionLoader):
+	""" Implementation of CollectionLoader for CS276 collection """
 
 	def __init__(self):
 		CollectionLoader.__init__(self, 'CS276')
@@ -150,12 +155,3 @@ class CS276(CollectionLoader):
 		thread = Thread(target=callback, args=(content,))
 		thread.start()
 		return thread
-
-	def load_document(self, nb_dir, name):
-		path = os.path.join(DATA_DIR, self.name, str(nb_dir), name)
-		with open(path, 'r') as f:
-			return f.read()
-
-
-if __name__ == "__main__":
-	pass
