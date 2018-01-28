@@ -45,7 +45,7 @@ Les traitements linguistiques (Tokenization, Filtrage, Normalisation par troncat
 
 Il est possible d'ajuster les traitements qui seront effectués sur les documents en jouant sur les paramêtres `tokn`, `filt` et `norm` lors de l'instanciation d'un objet Collection.
 
-**Tokenization** : Il s'agit de séparer le texte en une séquence de mots. Comme préconisé dans l'énoncé, j'ai procédé de façon simplifiée étant donné la nature des collections, c'est-à-dire en considérant tous les espaces et les caractères non alpha-numériques comme des séparateurs. Cette méthode est beaucoup plus rapide que _nltk.word_tokenize_, que je n'ai donc pas utilisé pour cette raison, bien que ce dernier soit un peu plus précis. La tokenisation décrite ci-dessus n'est effectuée que si `tokn = True` (choix par défaut), sinon on se contente de séparer les mots déjà pré-espacés (c'est le cas de CS276)
+**Tokenization** : Il s'agit de séparer le texte en une séquence de mots. Comme préconisé dans l'énoncé, j'ai procédé de façon simplifiée étant donné la nature des collections, c'est-à-dire en considérant tous les espaces et les caractères non alpha-numériques comme des séparateurs. Cette méthode est beaucoup plus rapide que _nltk.word_tokenize_, que je n'ai donc pas utilisé pour cette raison, bien que ce dernier soit un peu plus précis. La tokenisation décrite ci-dessus n'est effectuée que si `tokn = True` (choix par défaut), sinon on se contente de séparer les mots déjà pré-espacés en enlevant juste les 's (c'est le cas de CS276)
 
 **Filtrage** : Je vérifie que les tokens trouvés sont bien alphanumériques et je les compare avec une stop-liste pour ne garder que les plus significatifs. Pour ce faire, j'ai utilisé la même stop-liste pour les deux collection (celle de _common-words_ dans CACM). Cette étape n'est effectuée que si `filt=True` (par défaut True)
 
@@ -53,7 +53,7 @@ Il est possible d'ajuster les traitements qui seront effectués sur les document
 * Remplacer `Norm=False` par `Norm=True` dans le constructeur de Collection (processing l.15)
 * Remplacer `stemming=False` par `stemming=True` dans la signature de _find_documents_ de la classe DocIDIndex dans le fichier searching.index_reader (l.56) : Cela permet de faire aussi le traitement de normalisation sur les opérandes des requêtes booléennes
 
-**La réponse aux questions 1 à 5 sont générées lors de l'exécution du fichier _processing.py_**. En cas de problème, on pourra aussi voir les réponses et les graphes dans le fichier _graphs.pdf_ à la racine.
+**La réponse aux questions 1 à 5 sont générées lors de l'exécution du fichier _processing.py_**. En cas de problème, on pourra aussi voir les réponses et les graphes dans le fichier _results.pdf_ à la racine.
 
 #### 2.2 Indexation
 La construction et la sauvegarde des structures de données nécessaires à la recherche (index inversé, dictionnaire de termes, dictionnaire de documents et parfois index non inversé) sont effectuées par le code du dossier _indexing_
@@ -87,7 +87,7 @@ Enfin, plusieurs méthodes de pondération semblables à tf-idf ont été implé
 Les outils d'évaluation du système sont définis dans le dossier _evaluation_, qui comprend des mesures de performance et des mesures de pertinence.
 
 **Exécutez les fichiers _performance.py_ et _pertinence.py_ pour lancer les évaluations sur la collection CACM**
-En cas de problème, les résultats et les graphs pourront être visualisés dans le fichier _graphs.pdf_ à la racine.
+En cas de problème, les résultats et les graphs pourront être visualisés dans le fichier _results.pdf_ à la racine.
 
 L'évaluation a été effectuée sans normalisation des documents et des requêtes puis avec normalisation pour comparer. Malgré un temps de construction des index significativement plus longs, on observe un espace mémoire occupé moins important, des requêtes légèrement plus rapides et surtout une pertinence accrue.
 
