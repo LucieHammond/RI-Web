@@ -1,0 +1,346 @@
+.I 2
+Time Sharing System
+operating system IBM
+
+.I 2
+Prieve
+Udo Pooch
+
+.I 1
+Intermediate languages compilers
+
+.I 3
+communicating processes -theoretical -abstract
+procedure calls
+message passing
+
+.I 5
+implementation interfaces 
+implementation window managers
+implementation interpreters
+interface design
+interface efficiency effectiveness satisfaction
+
+.I 2
+robotics
+motion -dynamics -arm
+
+.I 2
+distributed algorithms
+concurrent programs processes
+
+.I 3
+Addressing networks
+resource addressing
+network operating systems
+
+.I 3
+Security networks
+network operating systems
+distributed systems
+
+.I 2
+Parallel languages
+parallel computation
+
+.I 1
+high level languages
+
+.I 1
+portable operating systems
+
+.I 2
+code optimization
+space efficiency
+
+.I 3
+implementation sort algorithms
+sort algorithms database
+database management applications
+
+.I 2
+microcode
+horizontal optimization
+
+.I 3
+file handling
+multiple processes
+message passing
+
+.I 2
+optimization intermediate code
+optimization machine code
+
+.I 3
+compilers parallel processors
+horizontal machines
+code compaction
+
+.I 1
+Parallel algorithms
+
+.I 1
+Graph theoretic sparse matrices
+
+.I 4
+computational complexity
+intractability
+class complete reductions
+algorithms efficiency
+
+.I 6
+hidden line surface computer graphics
+algorithms computer graphics
+cylinders
+toroids
+spheres
+cones
+
+.I 1
+Distributed computing
+
+.I 2
+Applied stochastic
+stochastic processes
+
+.I 2
+Performance evaluation systems
+Performance modelling systems
+
+.I 1
+Concurrency control mechanisms
+
+.I 1
+Memory management operating systems
+
+.I 3
+packet radio networks -hardware
+algorithms packet routing
+network topography -hardware
+
+.I 4
+Number theoretic algorithms
+prime number series
+sieves
+Chinese Remainder theorem
+
+.I 4
+text formatting systems
+nroff
+scribe
+bravo
+
+.I 5
+singular value decomposition
+digital image processing
+approximations image
+images noise
+expansions image processing
+
+.I 4
+eigenvalue decomposition
+singular value decomposition
+graph coloring
+graph isomorphism
+
+.I 4
+eigenvalue decomposition
+eigenspaces
+rotation eigenvectors
+subspaces closed linear operators
+
+.I 1
+root polynomial
+
+.I 4
+Probabilistic algorithms
+algorithms algebraic symbolic
+Probabilistic algorithm finite
+Probabilistic testing polynomial
+
+.I 2
+algorithm language recognition
+algorithm language parsing
+
+.I 6
+data types concurrency
+data type process
+synchronization processes type
+passing system types messages
+sender message receiver type
+bit stream type
+
+.I 3
+type module -Abstract -Data
+module matches
+module contexts
+
+.I 4
+type compatibility
+programmer defined types
+extensible languages
+programmer supplied definitions
+
+.I 8
+data types Pascal
+data types CLU
+data types Alphard
+data types Russell
+data types Ada
+data types ALGOL 68
+data types EL1
+languages type structures
+
+.I 11
+Theory distributed systems
+Theory databases
+reliability distributed systems
+fault-tolerance distributed systems
+atomicity
+distributed transactions
+synchronization algorithms
+resource allocation
+asynchronous parallel systems
+theory communicating processes
+theory communicating protocols
+
+.I 2
+performance evaluation pattern
+performance clustering
+
+.I 7
+Analysis shape
+perception shape
+Shape descriptions
+shape recognition
+Two dimensional shapes
+Measures circularity
+Shape matching
+
+.I 4
+Texture analysis
+Digitized texture
+Texture synthesis
+Perception texture
+
+.I 4
+optimize information system
+secondary index selection
+file reorganization
+distributed databases
+
+.I 5
+subset theory
+clustering
+information retrieval problems
+performance evaluation
+automatic indexing considerations
+
+.I 3
+Bayesian decision models
+optimize information retrieval
+retrieval system performance
+
+.I 4
+data structures optimization algorithms
+data structures linear programming algorithms
+numerical optimization algorithms
+numerical linear programming algorithms
+
+.I 1
+information retrieval knowledge
+
+.I 2
+Parallel processors
+Parallel information retrieval
+
+.I 2
+Parallel processors
+paging algorithms
+
+.I 2
+Modelling ecosystems
+simulation ecosystems
+
+.I 10
+mathematical induction
+group theory
+integers modulo
+probability
+binomial coefficients
+binomial theorem
+homomorphism
+morphism
+transitivity
+relation matrix
+
+.I 4
+Semantics programming languages
+abstract data types
+denotational semantics
+proofs correctness
+
+.I 4
+star height
+regular languages
+regular expressions
+regular events
+
+.I 6
+algebraic automata
+semigroups automata
+monoids automata
+algebraic regular languages
+semigroups regular languages
+monoids regular languages
+
+.I 2
+programming Von Neumann
+algebra programs
+
+.I 8
+statistical packages
+regression least squares
+regression linear models
+system design capabilities
+statistical formula
+sign tests
+multivariate components
+univariate components
+
+.I 7
+retrieval words
+retrieval lexical items
+retrieval morphologically information
+Hashing methods
+indexing methods
+English spelling
+natural language problems
+
+.I 6
+database management systems
+Database packages
+back end computers
+hardware microcomputers disk
+relational network 
+hierarchical models
+
+.I 4
+Information retrieval clustering
+Information retrieval coupling
+vector space model
+Boolean search methods
+
+.I 3
+parallel complexity
+PRAM circuits
+uniform circuits
+
+.I 2
+Algorithms parallel computation
+parallel sequential algorithms
+
+.I 3
+EL1
+ECL
+EL
