@@ -1,2 +1,6 @@
 Put CACM and CS276 collections here as it is on Claroline (in two folders called CACM and CS276)
-Delete this file when you have put the data
+
+Other solution is to change the path for data folder in .env file to redirect to the correct folder
+where the CACM and CS276 directories are
+
+Delete this file when you are finished

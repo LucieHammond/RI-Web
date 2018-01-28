@@ -1,6 +1,28 @@
 # Fondements de la Recherche d’Information-WEB
 *Cours de 3A : Projet*
 
+## Résumé des instructions pour l'exécution
+
+Pour exécuter le projet il est nécessaire d'inclure les corpus de données étudiés (qui ne sont pas fournis à cause de leur taille)
+Pour cela, deux solutions sont possibles :
+* soit vous téléchargez et copiez les deux dossiers CACM et CS276 tels qu'ils se présentent sur Claroline dans le répertoire res/Data
+* soit vous modifiez le chemin DATA_DIR dans le fichier .env qui se trouve à la racine pour indiquer l'emplacement du dossier qui contient CACM et CS276 sur votre machine
+
+Avant toute chose, exécutez les deux commandes suivantes:
+* `pip install -r requirements.txt`
+* ``export PYTHONPATH=$PYTHONPATH:`pwd` `` (si vous souhaitez lancer le projet depuis une console)
+
+Les fichiers exécutables sont :
+* _src/language_processing/processing.py_
+* _src/indexing/index_builder.py_ (étape nécessaire pour certaines autres exécutions)
+* _src/searching/bool_search.py_ (*)
+* _src/searching/vect_search.py_ (*)
+* _src/evaluation/performance.py_
+* _src/evaluation/pertinence.py_ (*)
+* _src/compression/vb_encoding.py_
+
+(*) L'exécution de ces fichiers nécessite au préalable l'exécution de _src/indexing/index_builder.py_ qui va créer les index.
+
 ## 1. Architecture du projet, corpus de données
 Le dossier présent s'articule autour de 2 répertoires _src_ et _res_, le premier contenant le code source du projet, et le deuxième les données (collections, indexes, requêtes, jugements de pertinence...) sur lesquelles j'ai travaillé.
 
@@ -24,7 +46,7 @@ Autant le dossier _src_ est personnel et nécessaire pour faire tourner le proje
 
 Ceux-ci sont nécessaire pour exécuter les recherches (_searching.bool_search_, _searching.vect_search_) et pour l'évaluation du systeme (_evaluation.performance_, _evaluation.pertinence_) mais ils sont générés automatiquement lorsque l'on exécute le fichier _indexing.index_builder_)
 
-**Les emplacements respectifs du dossier des données, du dossier des ressources (où seront générés les indexes) et du dossier des requêtes sont définis dans le fichier _config.py_ à la racine.** Il est donc tout à fait possible de récupérer ou de génerer ces données à d'autres endroits à condition d'en modifier le chemin dans _config_
+**Les emplacements respectifs du dossier des données, du dossier des ressources (où seront générés les indexes) et du dossier des requêtes peuvent être redéfinis dans le fichier .env à la racine.** Il est donc tout à fait possible de récupérer ou de génerer ces données à d'autres endroits à condition d'en modifier le chemin dans _.env_
 
 ### Le code source _src_
 
@@ -36,7 +58,7 @@ Le code source s'articule autour de 6 parties :
 * Un dossier __evaluation__ qui établit des mesures de performance et de pertinence pour les deux systèmes de recherche (booléen et vectoriel) appliqués à la collection CACM (2.3)
 * Un dossier __compression__ qui met en œuvre la méthode de compression Variable Byte Encoding pour générer l'index inversé de la collection CS276 (3.0)
 
-## 2. Mode d'emploi et explications
+## 2. Mode d'emploi détaillé et explications
 Les démarches à effectuer pour exécuter les différentes parties du projet et les explications sur les choix d'implémentation seront données dans l'ordre de l'énoncé
 
 ### Tâche 1 : Création d’un index inversé et moteur de recherche booléen et vectoriel
