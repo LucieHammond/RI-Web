@@ -1,0 +1,2 @@
+Put CACM and CS276 collections here as it is on Claroline (in two folders called CACM and CS276)
+Delete this file when you have put the data
