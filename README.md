@@ -3,12 +3,12 @@
 
 ## Résumé des instructions pour l'exécution
 
-Pour exécuter le projet il est nécessaire d'inclure les corpus de données étudiés (qui ne sont pas fournis à cause de leur taille)
+Pour exécuter le projet il est nécessaire d'inclure les corpus de données étudiés (qui ne sont pas fournis à cause de leur taille).
 Pour cela, deux solutions sont possibles :
 * soit vous téléchargez et copiez les deux dossiers CACM et CS276 tels qu'ils se présentent sur Claroline dans le répertoire res/Data
 * soit vous modifiez le chemin DATA_DIR dans le fichier .env qui se trouve à la racine pour indiquer l'emplacement du dossier qui contient CACM et CS276 sur votre machine
 
-Avant toute chose, exécutez les deux commandes suivantes:
+Avant toute chose, ouvrez un terminal à la racine du projet et exécutez les deux commandes suivantes:
 * `pip install -r requirements.txt`
 * ``export PYTHONPATH=$PYTHONPATH:`pwd` `` (si vous souhaitez lancer le projet depuis une console)
 
@@ -21,7 +21,7 @@ Les fichiers exécutables sont :
 * _src/evaluation/pertinence.py_ (*)
 * _src/compression/vb_encoding.py_
 
-(*) L'exécution de ces fichiers nécessite au préalable l'exécution de _src/indexing/index_builder.py_ qui va créer les index.
+(*) L'exécution de ces fichiers nécessite au préalable l'exécution de _src/indexing/index_builder.py_ qui va créer les indexs pour chaque collection.
 
 ## 1. Architecture du projet, corpus de données
 Le dossier présent s'articule autour de 2 répertoires _src_ et _res_, le premier contenant le code source du projet, et le deuxième les données (collections, indexes, requêtes, jugements de pertinence...) sur lesquelles j'ai travaillé.
